@@ -6,6 +6,9 @@
       "version": "17",
       "installGradle": false,
       "installMaven": false
+    },
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
     }
   },
   "remoteEnv": {
