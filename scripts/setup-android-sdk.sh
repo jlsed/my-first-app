@@ -26,3 +26,11 @@ echo ">> Installing platform-tools, platforms;android-36, build-tools;36.0.0 ...
     "platform-tools" "platforms;android-36" "build-tools;36.0.0" >/dev/null
 
 echo ">> Android SDK ready at: $SDK"
+
+# Write local.properties at the repo root so the SDK is found from ANY shell
+# (VS Code terminal, `gh codespace ssh`, CI) without relying on ANDROID_HOME.
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+if [ -f "$REPO_ROOT/settings.gradle.kts" ]; then
+    echo "sdk.dir=$SDK" > "$REPO_ROOT/local.properties"
+    echo ">> Wrote $REPO_ROOT/local.properties"
+fi
