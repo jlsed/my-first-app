@@ -1,0 +1,26 @@
+{
+  "name": "Android (Kotlin, Compose)",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17",
+      "installGradle": false,
+      "installMaven": false
+    }
+  },
+  "remoteEnv": {
+    "ANDROID_HOME": "/home/vscode/android-sdk"
+  },
+  "postCreateCommand": "bash scripts/setup-android-sdk.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "fwcd.kotlin",
+        "vscjava.vscode-gradle"
+      ]
+    }
+  },
+  "hostRequirements": {
+    "memory": "8gb"
+  }
+}

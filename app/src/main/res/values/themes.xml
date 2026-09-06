@@ -1,0 +1,4 @@
+<resources>
+    <!-- Framework theme: no extra XML library needed for a pure Compose app -->
+    <style name="Theme.MyFirstApp" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>

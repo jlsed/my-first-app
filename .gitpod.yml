@@ -1,0 +1,13 @@
+image: gitpod/workspace-full
+
+tasks:
+  - name: Android SDK setup
+    before: |
+      export ANDROID_HOME="$HOME/android-sdk"
+    init: |
+      bash scripts/setup-android-sdk.sh
+
+vscode:
+  extensions:
+    - fwcd.kotlin
+    - vscjava.vscode-gradle
